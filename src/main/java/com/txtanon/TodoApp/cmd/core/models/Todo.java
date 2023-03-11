@@ -1,4 +1,4 @@
-package com.txtanon.TodoApp.command.core.models;
+package com.txtanon.TodoApp.cmd.core.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

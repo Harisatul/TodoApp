@@ -1,6 +1,6 @@
-package com.txtanon.TodoApp.command.core.events;
+package com.txtanon.TodoApp.cmd.core.events;
 
-import com.txtanon.TodoApp.command.core.models.Todo;
+import com.txtanon.TodoApp.cmd.core.models.Todo;
 import lombok.Builder;
 import lombok.Data;
 
