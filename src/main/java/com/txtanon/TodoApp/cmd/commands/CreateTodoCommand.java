@@ -1,14 +1,15 @@
 package com.txtanon.TodoApp.cmd.commands;
 
-import jakarta.persistence.TableGenerator;
+import com.txtanon.TodoApp.cmd.core.models.Todo;
 import lombok.Builder;
 import lombok.Data;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
 @Builder
 public class CreateTodoCommand {
-
-//    @TargetIde
+    @TargetAggregateIdentifier
     private String id;
+    private Todo todo;
 
 }
