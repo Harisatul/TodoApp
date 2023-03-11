@@ -5,6 +5,7 @@ import com.txtanon.TodoApp.cmd.commands.CreateTodoCommand;
 import com.txtanon.TodoApp.cmd.core.events.TodoCreateEvent;
 import com.txtanon.TodoApp.cmd.core.models.Todo;
 import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
@@ -29,6 +30,11 @@ public class TodoAggregate {
                 .todo(todo)
                 .build();
         AggregateLifecycle.apply(todoBuild);
+    }
+    @EventSourcingHandler
+    public void on(TodoCreateEvent event){
+        this.id = event.getId();
+        this.todo = event.getTodo();
     }
 
 }
